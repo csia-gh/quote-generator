@@ -49,7 +49,7 @@ async function getQuote() {
     }
     quoteText.innerText = data.quoteText;
     removeLoadingSpinner();
-    throw new Error('oops');
+//     throw new Error('oops');
   } catch (error) {
     console.log('whoops, no quote', error);
     errorCounter++;
