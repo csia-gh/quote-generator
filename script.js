@@ -19,8 +19,9 @@ function removeLoadingSpinner() {
 }
 
 function somethingWentWrong() {
-  quoteContainer.innerHTML =
-    '<h2>Something went wrong, please try later </h2><h2>&#127773;</h2>';
+  quoteContainer.innerHTML = `<h2>Something went wrong, please try later </h2><h2>&#127773;</h2>
+    <button onClick="window.location.reload();">Try again</button>
+    `;
 }
 
 // Get Quote From API
@@ -48,7 +49,7 @@ async function getQuote() {
     }
     quoteText.innerText = data.quoteText;
     removeLoadingSpinner();
-    // throw new Error('oops');
+    throw new Error('oops');
   } catch (error) {
     console.log('whoops, no quote', error);
     errorCounter++;
